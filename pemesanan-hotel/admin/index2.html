@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin - Hotel Booking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="../hotel.png" />
+  <link href="../css/bootstrap5.0.1.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="p-2 bg-primary text-white text-center">
+     <h1>HOTEL ANAYA</h1>
+     <p>Selamat datang di Hotel Anaya Labuan Bajo Indonesia!</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <h4><a class="nav-link text-white">ADMIN</a></h4> 
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+             <h5><a class="nav-link" href="">Kamar</a></h5> 
+            </li>
+            <li class="nav-item">
+              <h5><a class="nav-link" href="#" id="tombol_fasilitas">Fasilitas Kamar</a></h5> 
+            </li>
+            <li class="nav-item">
+              <h5><a class="nav-link" href="#" id="tombol_fasilitas_umum">Fasilitas Umum</a></h5>
+            </li>
+          </ul>     
+  
+        </div>
+      </div>
+</nav>
+
+<!--------------------------------------------- SCRIPT AWAL DATA KAMAR ----------------------------------------------------------- -->
+<div class="container mt-2" id="data_kamar">
+ <h2 class="text-center" >DATA KAMAR</h2>
+ <h5 class="text-center">Hotel Anaya</h5>
+ 
+ <!-- Desain Pencarian Tanggal dan Nama -->
+  <div class="d-flex justify-content-between d-flex flex-row-reverse">
+    <div class="form-floating mb-2 mt-3">
+      <input type="text" class="form-control" id="nama"  name="nama">
+      <label for="nama">Cari Nama Kamar</label>
+     </div> 
+  </div> 
+
+  <!-- Desain Box Tabel Kamar-->
+  <div class="d-flex justify-content-center">
+   <div class="card mt-2 mb-4" style="width:2000px">
+     <div class="card-body">
+      
+       <div style="overflow-x:auto;">
+         <table id="tb_kamar" class="table table-striped" style="width:100%">
+          <thead>
+            <tr>
+                <th>Kamar</th>
+                <th>Jumlah Kamar</th>
+                <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td><a href="">Ubah</a> <a href="#" id="show_kamar">Lihat</a></td>
+            </tr>
+            <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td><a href="">Ubah</a> <a href="">Lihat</a></td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <button type="button" id="add_kamar" class="btn btn-outline-primary">+</button>
+        </div>
+     </div>
+    </div>
+  </div>
+
+</div>
+<!--------------------------------------------- SCRIPT AKHIR DATA KAMAR ----------------------------------------------------------- -->
+
+<!--------------------------------------------- SCRIPT AWAL DATA FASILITAS -------------------------------------------------------- -->
+<div class="container mt-2" id="data_fasilitas">
+  <h2 class="text-center" >DATA FASILITAS</h2>
+  <h5 class="text-center">Hotel Anaya</h5>
+  
+  <!-- Desain Pencarian Tanggal dan Nama -->
+   <div class="d-flex flex-row-reverse">
+     <div class="form-floating mb-2 mt-3 ">
+       <input type="text" class="form-control" id="cari_fasilitas"  name="cari_fasilitas">
+       <label for="cari_fasilitas">Cari Fasilitas</label>
+      </div> 
+   </div> 
+ 
+   <!-- Desain Box Tabel Kamar-->
+   <div class="d-flex justify-content-center">
+    <div class="card mt-2 mb-4" style="width:2000px">
+      <div class="card-body">
+       
+        <div style="overflow-x:auto;">
+          <table id="tb_fasilitas" class="table table-striped" style="width:100%">
+           <thead>
+             <tr>
+                 <th>Tipe Kamar</th>
+                 <th>Nama Fasilitas</th>
+                 <th>Aksi</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+                 <td>Delux</td>
+                 <td>AC Pendingin Ruang</td>
+                 <td><a href="">Ubah</a> <a href="#" id="show_fasilitas">Lihat</a></td>
+             </tr>
+             <tr>
+               <td>Tiger Nixon</td>
+               <td>System Architect</td>
+               <td><a href="">Ubah</a> <a href="">Lihat</a></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div class="d-flex flex-row-reverse">
+           <button type="button" id="add_fasilitas" class="btn btn-outline-primary">+</button>
+         </div>
+      </div>
+     </div>
+   </div>
+</div>
+<!--------------------------------------------- SCRIPT AKHIR DATA FASILITAS --------------------------------------------- -->
+
+<!--------------------------------------------- SCRIPT DATA FASILITAS UMUM ---------------------------------------------- -->
+<div class="container mt-2" id="data_fasilitas_umum">
+  <h2 class="text-center" >DATA FASILITAS UMUM</h2>
+  <h5 class="text-center">Hotel Anaya</h5>
+  
+  <!-- Desain Pencarian Tanggal dan Nama -->
+   <div class="d-flex flex-row-reverse">
+     <div class="form-floating mb-2 mt-3 ">
+       <input type="text" class="form-control" id="cari_fasilitas_umum"  name="cari_fasilitas_umum">
+       <label for="cari_fasilitas_umum">Cari Fasilitas Umum</label>
+      </div> 
+   </div> 
+ 
+   <!-- Desain Box Tabel Kamar-->
+   <div class="d-flex justify-content-center">
+    <div class="card mt-2 mb-4" style="width:2000px">
+      <div class="card-body">
+       
+        <div style="overflow-x:auto;">
+          <table id="tb_fasilitas_umum" class="table table-striped" style="width:100%">
+           <thead>
+             <tr>
+                 <th>Nama Fasilitas</th>
+                 <th>Keterangan </th>
+                 <th>Aksi</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+                 <td>AC Pendingin Ruang</td>
+                 <td>Berada Pada Lantai 3</td>
+                 <td><a href="">Ubah</a> <a href="#" id="show_fasilitas_umum">Lihat</a></td>
+             </tr>
+             <tr>
+               <td>Kolam Renang</td>
+               <td>Berada Pada Lantai 5</td>
+               <td><a href="">Ubah</a> <a href="">Lihat</a></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div class="d-flex flex-row-reverse">
+           <button type="button" id="add_fasilitas_umum" class="btn btn-outline-primary">+</button>
+         </div>
+      </div>
+     </div>
+   </div>
+</div>
+
+
+<!------------------------------ Script Awal Modal Tambah Kamar ------------------------------ -->
+<div class="modal fade" id="modal_tambah_kamar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Data Kamar</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 mt-3 form-floating">
+            <input type="text" class="form-control" id="nama_kamar" name="nama_kamar">
+            <label for="nama_kamar">Nama Kamar</label>
+          </div>
+          <div class="mb-3 mt-3 form-floating">
+            <input type="number" class="form-control" id="jml_kamar" name="jml_kamar">
+            <label for="jml_kamar">Jumlah Kamar</label>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="upload_fasilitas">Pilih Gambar:</label>
+            <input type="file" class="form-control" id="upload_fasilitas">        
+          </div>
+        </form>
+
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Simpan</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!------------------------------ Script Akhir Modal Tambah Kamar ------------------------------ -->
+
+<!------------------------------ Script Awal Modal Tambah Fasilitas ------------------------------ -->
+<div class="modal fade" id="modal_tambah_fasilitas">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Data Fasilitas</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 mt-3 form-floating">
+            <select class="form-select" id="tipe_kamar" name="tipe_kamar">
+              <option></option>
+              <option>Delelux</option>
+              <option>Bozzer</option>
+            </select>
+            <label for="tipe_fasilitas">Tipe Kamar</label>
+          </div>
+          <div class="mb-3 mt-3 form-floating">
+            <input type="text" class="form-control" id="nama_fasilitas" name="nama_fasilitas">
+            <label for="nama_fasilitas">Nama Fasilitas</label>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!------------------------------ Script Akhir Modal Tambah Fasilitas ------------------------------ -->
+
+<!------------------------------ Script Awal Modal Tambah Fasilitas Umum ------------------------------ -->
+<div class="modal fade" id="modal_tambah_fasilitas_umum">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Data Fasilitas Umum</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 mt-3 form-floating">
+            <input type="text" class="form-control" id="nama_fasilitas_umum" name="nama_fasilitas_umum">
+            <label for="nama_fasilitas_umum">Nama Fasilitas</label>
+          </div>
+          <div class="mb-3 mt-3 form-floating">
+            <textarea class="form-control" rows="9" id="comment" name="text"></textarea>
+            <label for="tipe_fasilitas">Ketrangan Fasilitas</label>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="upload_fasilitas">Pilih Gambar:</label>
+            <input type="file" class="form-control" id="upload_fasilitas">        
+          </div>
+        </form>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Simpan</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!------------------------------ Script Akhir Modal Tambah Fasilitas Umum------------------------------ -->
+
+<!----------------------------- Script Awal Modal Lihat Data Kamar -------------------------------- -->
+<div class="modal" id="lihat_data_kamar">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Deskripsi Kamar</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Data Kamar
+      </div>
+
+    </div>
+  </div>
+</div>
+<!----------------------------- Script Akhir Modal Lihat Data Kamar -------------------------------- -->
+
+<!----------------------------- Script Awal Modal Lihat Data Fasilitas -------------------------------- -->
+<div class="modal" id="lihat_data_fasilitas">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Deskripsi Fasilitas</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Data Fasilitas
+      </div>
+
+    </div>
+  </div>
+</div>
+<!----------------------------- Script Akhir Modal Lihat Data Fasilitas -------------------------------- -->
+
+<!-- SCRIPT FOOTER -->
+<div class="mt-5 p-2 bg-dark text-white text-center">
+  <p>@Desain by UKK RPL 2022</p>
+</div>
+
+<!-- SCRIPT JAVASCRIPT -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap5.0.1.bundle.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  /*Tampilan saat Loading Awal*/
+  $("#data_kamar").show();
+  $("#data_fasilitas").hide();
+  $("#data_fasilitas_umum").hide();
+
+  /*Tampilan saat mengkilk tombol tambah(+) kamar*/
+  $("#add_kamar").click(function() {
+    $("#modal_tambah_kamar").modal('show');
+  });
+  /*Tampilan saat mengkilk tombol tambah(+) fasilitas*/
+    $("#add_fasilitas").click(function() {
+    $("#modal_tambah_fasilitas").modal('show');
+  });
+  /*Tampilan saat mengkilk tombol tambah(+) fasilitas umum*/
+    $("#add_fasilitas_umum").click(function() {
+    $("#modal_tambah_fasilitas_umum").modal('show');
+  });
+  /*Tampilan saat mengkilk tombol Menu Fasilitas kamar*/
+  $("#tombol_fasilitas").click(function() {
+    $("#data_kamar").hide();
+    $("#data_fasilitas_umum").hide();
+    $("#data_fasilitas").show();
+  });
+
+    /*Tampilan saat mengkilk tombol Menu Fasilitas Umum*/
+  $("#tombol_fasilitas_umum").click(function() {
+    $("#data_kamar").hide();
+    $("#data_fasilitas").hide();
+    $("#data_fasilitas_umum").show();
+  });
+    
+   $("#show_kamar").click(function() {
+   $("#lihat_data_kamar").modal("show");
+   });
+
+   $("#show_fasilitas").click(function() {
+   $("#lihat_data_fasilitas").modal("show");
+   });
+
+   $("#show_fasilitas_umum").click(function() {
+   $("#lihat_data_fasilitas_umum").modal("show");
+   });
+
+});
+
+</script>
+
+<!-- END BODY -->
+</body>
+</html>
